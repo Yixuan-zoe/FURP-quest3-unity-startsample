@@ -1,0 +1,329 @@
+\documentclass{article}
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{graphicx}
+
+\begin{document}
+
+\title{Unity and VR Development Process}
+\author{}
+\date{}
+\maketitle
+
+\section{Meta Quest 3}
+\subsection{Meta Account Registration}
+
+\begin{itemize}
+    \item Register at \href{https://auth.meta.com/}{Meta Auth}
+\end{itemize}
+
+\subsection{\href{https://developer.oculus.com/documentation/unity/book-unity-gsg/}{Enable Developer Mode}}
+
+Once you belong to a developer organization, follow these steps to put your device in developer mode:
+
+\begin{enumerate}
+    \item Open the Meta Quest mobile app, go to Menu $>$ Devices. Select your headset to access Headset Settings and turn on Developer Mode.
+    \item Connect the headset to the computer using a USB-C cable and put on the headset again. Go to Settings $>$ System $>$ Developer, and turn on Enable custom settings and MTP Notification.
+    \item Click Always allow from this computer when prompted to allow USB debugging.
+    \item Connect your headset to the computer using a USB-C cable and wear the headset.
+    \item Accept Allow USB Debugging and Always allow from this computer when prompted on the headset.
+\end{enumerate}
+
+For more detailed instructions, visit the \href{https://developer.oculus.com/documentation/native/android/mobile-device-setup/#enable-developer-mode}{Meta Quest Developer Mode Setup Guide}.
+
+\begin{itemize}
+    \item Download Oculus ADB Drivers \href{https://developer.oculus.com/downloads/package/oculus-adb-drivers/}{link}
+    \item Use ADB with Meta Quest \href{https://developer.oculus.com/documentation/native/android/ts-adb/#mobile-android-debug-intro}{ADB}
+\end{itemize}
+
+\subsection{Meta Quest Developer Hub for Windows}
+
+\begin{itemize}
+    \item Download from \href{https://developer.oculus.com/downloads/package/oculus-developer-hub-win/}{Meta Quest Developer Hub}
+    \item This is a platform for developers to create, test, and release virtual reality (VR) applications and games for the Meta Quest (formerly known as Oculus Quest) headset.
+    \item The platform provides a range of tools and resources to help developers develop and optimize their applications on the Meta Quest VR system.
+\end{itemize}
+
+\subsection{Meta Quest Developer Hub}
+
+Meta Quest Developer Hub (MQDH) is a development app that helps you develop apps for the Meta Quest line of headsets. With it you can:
+
+\begin{itemize}
+    \item Use either a cable or WIFI connection between your headset and the computer
+    \item Disable the proximity sensor and Boundary (Guardian) for an uninterrupted testing workflow
+    \item View the device logs to help with debugging
+    \item Capture screenshots and record videos of what you see in the headset (see Record a Video for more information.)
+    \item Deploy apps directly to your headset from your computer
+    \item Upload apps to the Meta Quest Developer Dashboard for store distribution
+    \item Share your VR experience by casting the headset display to the computer
+    \item Download the latest Meta Quest tools and SDKs you need to build apps
+\end{itemize}
+
+Meta Quest Link is a feature of Meta Quest headsets that turn them into PC VR headsets. With this feature, you can connect your development PC via to the headset via cable or airlink over WiFi. When connected, you can debug your app running on your headset from within your development environment.
+
+\subsubsection{Prerequisites}
+
+Setting up MQDH with the Meta Quest headset is quick and easy. It’s a cross-platform desktop tool, that runs on the macOS and Windows operating systems. Before you begin the setup process, get your Meta Quest headset and a USB-C cable.
+
+\subsubsection{Install MQDH}
+
+\begin{enumerate}
+    \item Meta Quest LinkDownload
+    \begin{itemize}
+        \item Download from \href{https://www.oculus.com/download_app/?id=1582076955407037}{Meta Quest Link}
+        \item This software is convenient for using Quest link for streaming development.
+    \end{itemize}
+    \item Open the application and log in using your developer credentials, which must be the same as you’ve used for logging in the headset.
+    \item Note: As of January 1st, 2023, you must use a Meta account to log in to MQDH, apps, and Meta headsets. For more information, read the Introducing Meta Accounts: What Developers Need to Know blog post.
+\end{enumerate}
+
+\subsubsection{Connect Headset to MQDH}
+
+To use MQDH features, you need to connect a Meta Quest headset to the computer.
+
+\begin{enumerate}
+    \item Open the Meta Horizon mobile app, go to Menu $>$ Devices. Select your headset to access Headset Settings and turn on Developer Mode. See Set Up Development Environment and Headset for information on the Meta Quest mobile app.
+    \item Connect the headset to the computer using a USB-C cable and put on the headset again. Go to Settings $>$ System $>$ Developer, and turn on Enable custom settings and MTP Notification.
+    \item Click Always allow from this computer when prompted to allow USB debugging.
+    \item Connect your headset to the computer using a USB-C cable and wear the headset.
+    \item Accept Allow USB Debugging and Always allow from this computer when prompted on the headset.
+    \item Open MQDH.
+    \item On the MQDH navigation pane, choose Device Manager. All the devices you have set up are displayed in the main pane. Each device is shown with its status, which includes the device ID and connection status. The active device shows the green Active designator.
+    \item If there are multiple headsets connected to your computer, you can use the drop-down menu in the upper-right corner to select the headset currently connected to MQDH.
+\end{enumerate}
+
+\subsubsection{Set Up Headset from MQDH}
+
+You can use MQDH to set up a new Meta Quest headset and do a factory reset.
+
+\begin{enumerate}
+    \item Make sure that the headset is charged and turned on.
+    \item Bluetooth must be enabled on your computer.
+    \item Open MQDH.
+    \item On the navigation pane, choose Device Manager. Then from the upper-right corner of the main pane, click Set Up New Device. If you already have the headset set up in MQDH, the headset is available in the list located in the upper-right corner of MQDH.
+    \item Read the guidance and click Next.
+    \item Select the type of headset.
+    \item After MQDH has discovered the headset, click the headset ID, and then click Next.
+    \item Log in using your developer credentials.
+    \item In the WiFi window, select the WiFi network you want to use. This should be the same network as your development computer to enable casting headset on your computer.
+    \item On the Complete Setup from Your Headset window, put on the headset, and then follow the prompts.
+    \item After the headset reboots and MQDH reconnects to it, use the slider to turn on the developer mode. Your developer account must be verified to turn on the developer mode.
+    \item The final screen tells you how to enable the headset to use MQDH features. You must:
+    \begin{itemize}
+        \item Connect the headset to the computer via USB.
+        \item Allow access when prompted in the headset.
+    \end{itemize}
+    \item To set up multiple headsets, repeat the steps to connect other headsets.
+\end{enumerate}
+
+\subsubsection{Enable Android Developer Bridge (ADB) over WiFi}
+
+ADB is a command-line tool bundled with MQDH which enables you to communicate with your Meta Quest headset during development. With MQDH, you can connect the headset wirelessly to the computer using ADB over WiFi.
+
+\begin{enumerate}
+    \item After you’ve connected the headset to MQDH over a USB-C cable, on MQDH Device Manager, on Device Actions, turn on ADB over Wi-Fi.
+    \item The status under ADB over WiFi changes to enabled.
+    \item Disconnect the USB cable from the headset to continue using your headset wirelessly.
+\end{enumerate}
+
+For more information on ADB, see Use ADB with Meta Headsets.
+
+\begin{itemize}
+    \item Note: ADB is a utility that is part of the Android SDK and is also part of the MQDH install. If you have previously installed the Android SDK, you may have a different ADB version already running on your computer. The different ADB instances can conflict with each other, giving you unexpected results.
+    \item When MQDH does detect adb paths on startup, it displays a warning message. If the warning message appears when you start MQDH, you can use the existing ADB version installed on your computer by changing the ADB path in MQDH.
+\end{itemize}
+
+\subsubsection{To change the ADB path in MQDH}
+
+\begin{enumerate}
+    \item On the navigation pane, click Settings.
+    \item Modify the ADB path to let MQDH use the ADB instance located on your computer.
+\end{enumerate}
+
+\subsubsection{Turn off Proximity Sensor and Boundary}
+
+For development and debugging purposes, you can turn off the proximity sensor and Boundary (Guardian). However, we strongly recommend turning them on when the device is no longer in development mode.
+
+\begin{itemize}
+    \item The proximity sensor is enabled to ensure that the headset goes to sleep when not in use.
+    \item Boundary creates a virtual boundary to ensure your safety when you’re immersed in the VR experience.
+    \item During development, you often debug directly in the dev environment without wearing the headset, so it’s safe to turn off these features. Turning them off makes it easy to capture screenshots, record videos, and step through code.
+    \item Note: Turning off the proximity sensor means your device will not go to sleep, so your battery won’t last as long. We highly recommend that you either turn the headset off, leave the device charging, or turn the proximity sensor back on when you don’t need it to be off.
+\end{itemize}
+
+\begin{enumerate}
+    \item On the MQDH Device Manager, under Device Actions, turn off Proximity Sensor and Guardian to keep the headset in the active state. You can also press the CTRL + Shift + P and CTRL + Shift + G keyboard shortcuts to turn on or off the proximity sensor and Boundary, respectively.
+\end{enumerate}
+
+\subsubsection{Change the Device Name}
+
+With MQDH, you can give your devices nicknames and make them easier to identify.
+
+\begin{enumerate}
+    \item On the MQDH Device Manager, under Settings, click Change.
+    \item In the Device Nickname dialog, enter a new nickname for the device that’s currently connected with MQDH.
+    \item Click Save.
+\end{enumerate}
+
+\subsubsection{Set Up Meta Quest Link}
+
+MQDH offers the options to configure the Meta Quest Link. From the MQDH Device Manager, you can do the following:
+
+\begin{itemize}
+    \item Enable and disable Link mode
+    \item Switch between Cable and Air Link
+\end{itemize}
+
+Link mode causes the device to behave like a PC VR headset until the mode is explicitly turned off.
+
+\begin{enumerate}
+    \item On the navigation pane, choose Device Manager.
+    \item In the Device Actions pane, click the Select Mode dropdown and choose between Air Link and Cable. This sets the mode for the Active headset.
+\end{enumerate}
+
+\subsubsection{Video and Image Files}
+
+You can use the MQDH dashboard to capture images and screen recordings. To find them after you have recorded them, in the navigation pane, click the File Manager tab. When you open the MQDH File Manager and click on Videos or Images all the media of that type is synchronized from the device to the PC desktop. This synchronization is not continuous, so you need to open the MQDH File Manager and click on Videos or Images whenever you want to download new content.
+
+\begin{itemize}
+    \item Note: Video files will not be automatically downloaded from MQDH. You will need to open the file in order to download it.
+\end{itemize}
+
+\subsubsection{MQDH Settings}
+
+To view and update MQDH settings, open MQDH. Then, in the navigation pane, select Settings. You’ll find three tabs:
+
+\begin{itemize}
+    \item General, for general settings, including ADB Path, Download Large Device Files, and more.
+    \item About tab, which provides various information, such as MQDH Version, and Terms of Service.
+    \item Notifications, where you can adjust your notification settings.
+\end{itemize}
+
+\subsubsection{Updates}
+
+MQDH maintains a regular update cadence to ship new features and important bug fixes. It supports auto-update and you will be prompted to install the new release when it becomes available.
+
+\section{Development Progress}
+
+\subsection{Initial Setup}
+
+\begin{enumerate}
+    \item \textbf{Meta Account Registration}
+    \begin{itemize}
+        \item Successfully registered a Meta account in \href{https://auth.meta.com/}{Meta Auth}.
+    \end{itemize}
+
+    \item \textbf{Oculus PC App Download}
+    \begin{itemize}
+        \item Downloaded the Oculus PC App from \href{https://www.oculus.com/download_app/?id=1582076955407037}{Oculus PC App}.
+        \item Installed and configured the app for streaming development.
+    \end{itemize}
+
+    \item \textbf{Meta Quest Developer Hub Installation}
+    \begin{itemize}
+        \item Downloaded and installed the Meta Quest Developer Hub from \href{https://developer.oculus.com/downloads/package/oculus-developer-hub-win/}{Meta Quest Developer Hub}.
+        \item The hub provides essential tools for VR application development and optimization.
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Enabling Developer Mode}
+
+\begin{itemize}
+    \item Meta Account
+    \begin{itemize}
+        \item Tips: The Developer Mode is only for the \textit{account} which is the \textbf{owner} of the Quest 3.
+    \end{itemize}
+\end{itemize}
+
+\begin{enumerate}
+    \item Opened the Meta Quest mobile app, navigated to \texttt{Menu > Devices}, and selected the \texttt{headset} to access Headset Settings and turn on \texttt{Developer Mode}.
+    \item Connected the headset to the computer using a \textit{USB-C cable} and put on the headset again. Went to \texttt{Settings > System > Developer}, and turned on Enable custom settings and MTP Notification.
+    \item Clicked \texttt{Always allow from this computer} when prompted to allow USB debugging.
+    \item Connected the headset to the computer using a \textit{USB-C cable} and wore the headset.
+    \item Accepted \texttt{Allow USB Debugging} and \texttt{Always allow from this computer} when prompted on the headset.
+\end{enumerate}
+
+\begin{itemize}
+    \item Configured the development environment and created necessary apps via \href{https://developer.oculus.com/manage/}{MY APPS}.
+\end{itemize}
+
+\section{Unity Integration}
+
+\subsection{UnityHub Download}
+
+\begin{itemize}
+    \item Download from \href{https://unity.com/cn/download}{UnityHub}
+\end{itemize}
+
+\subsection{Unity Sample}
+
+\begin{itemize}
+    \item Download UnityStartSample
+    \begin{itemize}
+        \item This sample project can be downloaded from GitHub: \href{https://github.com/oculus-samples/Unity-StarterSamples}{Unity-StarterSamples}
+        \item The starter samples you will find here are to help you navigate and understand our APIs with more flexibility. We encourage you to look into them, test them out and inspire yourself on how the APIs can be used in your own project.
+        \item The \href{./LICENSE}{Oculus License} applies to the samples.
+        \item This project was built using the \href{https://unity.com/download}{Unity engine}.
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{Getting The Code}
+Clone this repo using the "Code" button above, or this command:
+\begin{verbatim}
+git clone https://github.com/oculus-samples/Unity-StarterSamples.git
+\end{verbatim}
+
+\subsubsection{How to run the project in Unity}
+\begin{enumerate}
+    \item Make sure you're using \textit{Unity 2021.3.26f1} or newer.
+    \item In the Project window, navigate to \texttt{Assets/StarterSamples/Usage}.
+    \item Click on individual scenes.
+    \item Click \textbf{Play} button to explore scene functionality in Unity.
+\end{enumerate}
+
+\subsubsection{How to test on device}
+\begin{enumerate}
+    \item Navigate to \textbf{Oculus} $>$ \textbf{Samples} $>$ \textbf{Build Starter Scene} to build an APK that will launch the \textbf{Starter Scene}.
+    \end{enumerate}
+
+    % Uncomment the following lines if the image file is available in the specified path
+    % \begin{center}
+    %     \includegraphics[width=0.5\textwidth]{./Documentation/Medias/buildsamples.png}
+    % \end{center}
+
+    \begin{enumerate}
+    \item Navigate to the \texttt{Unity-StarterSamples} folder and copy the \texttt{StartScene.apk} to your device using \href{https://developer.oculus.com/documentation/unity/ts-odh-deploy-build/}{Meta Quest Developer Hub}.
+\end{enumerate}
+
+\subsubsection{SDK Dependencies}
+All Meta SDKs can be found in the \href{https://assetstore.unity.com/publishers/25353}{Unity Asset Store}. This project depends on SDKs defined in the \texttt{Packages/manifest.json}:
+\begin{itemize}
+    \item \href{https://assetstore.unity.com/packages/tools/integration/meta-xr-core-sdk-269169}{Meta XR Core SDK}
+    \item \href{https://assetstore.unity.com/packages/tools/integration/meta-xr-platform-sdk-262366}{Meta XR Platform SDK}
+\end{itemize}
+
+\subsubsection{Integrate Samples to your own project}
+\begin{enumerate}
+    \item Make sure your project uses the same SDK version
+    \item Move the samples to your project
+\end{enumerate}
+
+\begin{itemize}
+    \item \textbf{Copy Samples directory}
+    \begin{itemize}
+        \item Copy \texttt{Assets/StarterSamples} directory to your own project
+    \end{itemize}
+    \item \textbf{Create UnityPackage and Import it}
+    \begin{enumerate}
+        \item Open Unity-StarterSamples project in Unity
+        \item Right-click on \texttt{Assets/StarterSamples} and select \textit{Export Package...}
+        \item Save package in an easy location to retrieve
+        \item Open your own project (where you want the samples to be added)
+        \item Click on \textit{Assets $>$ Import Package $>$ Custom Package...} from the menu bar
+        \item Find the package we saved in step 3 and click \textit{Open}
+    \end{enumerate}
+\end{itemize}
+
+\end{document}
+
+
